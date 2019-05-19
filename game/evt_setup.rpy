@@ -133,7 +133,7 @@ init -1 python:
 init python:
     config.name = _("_Base")
     config.version = "0.0.0"
-    build.name = "Classic Edition"
+    build.name = "Classic_Edition"
     config.window_icon = "gui/window_icon.png"
     #config.main_menu_music = Mmain
     #config.game_menu_music = space
