@@ -1,0 +1,6 @@
+
+*.rpyb
+*.rpyc
+*.save
+game/saves/persistent
+log.txt
