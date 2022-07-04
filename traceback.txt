@@ -1,0 +1,42 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 29, in script call
+    call events_run_period()
+  File "game/dse-event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/script.rpy", line 57, in script call
+    call screen testtext
+  File "game/evt_screens.rpy", line 118, in script
+    $ bag.sell(targ)
+  File "game/evt_screens.rpy", line 118, in <module>
+    $ bag.sell(targ)
+  File "game/evt_setup.rpy", line 131, in sell
+    self.cash += item.sellcost
+AttributeError: 'unicode' object has no attribute 'sellcost'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 29, in script call
+    call events_run_period()
+  File "game/dse-event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/script.rpy", line 57, in script call
+    call screen testtext
+  File "game/evt_screens.rpy", line 118, in script
+    $ bag.sell(targ)
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/evt_screens.rpy", line 118, in <module>
+    $ bag.sell(targ)
+  File "game/evt_setup.rpy", line 131, in sell
+    self.cash += item.sellcost
+AttributeError: 'unicode' object has no attribute 'sellcost'
+
+Windows-10-10.0.19041
+Ren'Py 7.4.11.2266
+_Base 1.0
+Wed Mar 30 11:38:25 2022

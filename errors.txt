@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/evt_screens.rpy", line 84: u'AnimatedValue' is not a keyword argument or valid child for the bar statement.
+    bar AnimatedValue(value=0.0, range=1.0, delay=1.0, old_value=None)
+                     ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Wed Mar 30 12:08:35 2022

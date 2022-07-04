@@ -4,12 +4,13 @@
 # name of the character.
 
 define e = Character("Eileen")
-
+define jasmine = npc("jasmine")
 
 # The game starts here.
 
 label start:
     hide window
+    show screen testgui
     scene bedroom with dissolve
     ##show screen hud
     #show screen display_stats
@@ -27,15 +28,7 @@ label morning:
 label day:
     $ act = "day"
     call events_run_period()
-    if apo < 1:
-        stop music
-        jump night
     hide All
-    #show screen gen()
-    #call screen s1()
-    $ apo -= 1
-    ## "Stat change: [bty]"
-    ##  call screen movement()
     jump day
 
 label night:
@@ -45,8 +38,18 @@ label night:
     ##  reset ap, go home,
     $ act = "night"
     call events_run_period()
-    $ apo = sta/24
+    #$ apo = sta/24
+    python:
+        player.stamina.reset()
     scene black with fade
     jump morning
 
     return
+label run_event:
+    call events_run_period()
+    return
+label dialog_loop:
+    if player.stamina.cur <=0:
+        jump night
+    call screen side_tab
+    jump dialog_loop
